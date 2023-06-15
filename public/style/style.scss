@@ -1,0 +1,23 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+.indigo-700{
+    color: $indigo-700;
+}
+
+#nav{
+    background-color: blueviolet;
+}
+header{
+    border: 2px solid red;
+}
+.cont{
+    border: 2px solid red;
+    display: flex;
+    flex-wrap: wrap;
+}
+#jumbotron{
+    border: 2px solid red;
+}
+body{
+    /* background-image: url('../patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg'); */
+    background-color: indigo-700;
+}
