@@ -10,7 +10,7 @@ app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/', birds)
-app.use('/about', birds)
+// app.use('/about', birds)
 
 app.listen(3000);
 console.log("Server is listening on port 3000\nhttp://localhost:3000/ ");
