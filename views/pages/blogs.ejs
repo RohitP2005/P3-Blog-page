@@ -18,7 +18,7 @@
                             </h6>
                             <p class="card-text">Summary:  <%= ele.content.slice(0, 75)+"..." %></p>
                             <a href="blogs/<%= ele.id%>" class="cardlink">View full blog</a>
-                            <form action="/delete/<%= ele.id%>" method="delete" class="delete-form">
+                            <form action="/delete/<%= ele.id%>" method="post" class="delete-form">
                                 <button class="btn btn-outline-danger" type="submit">Delete</button>
                             </form>
 

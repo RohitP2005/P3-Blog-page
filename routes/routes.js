@@ -30,11 +30,11 @@ router.post("/add", (req, res) => {
     blogs.push(post)
     res.redirect("/blog");
 });
-router.delete('/delete/:id', (req, res) => {
+router.post('/delete/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const index = myArray.findIndex(obj => obj.id === id);
+    const index = blogs.findIndex(obj => obj.id === id);
     if (index !== -1) {
-        myArray.splice(index, 1);
+        blogs.splice(index, 1);
           console.log("Object deleted successfully!");
         } else {
             console.log("Object not found.");
