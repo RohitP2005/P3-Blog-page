@@ -1,3 +1,10 @@
+.maindiv{
+    width: 100vw;
+    height: 100vh;
+}
+.pages-div h1{
+    text-align: center;
+}
 .form{
     width: 100vw;
     height: 100vh;
@@ -13,4 +20,12 @@
 }
 .form-contro{
     width: 50px;
+}
+.blogs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card{
+    margin: 10px 10px;
 }
