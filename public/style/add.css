@@ -1,0 +1,16 @@
+.form{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form-inner{
+    border: 2px solid #212529;
+    padding: 30px 30px;
+    width: 75%;
+}
+.form-contro{
+    width: 50px;
+}
