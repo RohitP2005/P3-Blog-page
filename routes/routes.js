@@ -28,7 +28,18 @@ router.post("/add", (req, res) => {
       id:ids+1
     });
     blogs.push(post)
-    res.redirect("/");
+    res.redirect("/blog");
+});
+router.delete('/delete/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const index = myArray.findIndex(obj => obj.id === id);
+    if (index !== -1) {
+        myArray.splice(index, 1);
+          console.log("Object deleted successfully!");
+        } else {
+            console.log("Object not found.");
+        }
+        res.redirect("/blogs");
   });
   
 

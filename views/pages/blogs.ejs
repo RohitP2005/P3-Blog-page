@@ -17,7 +17,10 @@
                             <h6 class="card-subtitle mb-2 text-body-secondary">Author:<%= ele.author %>
                             </h6>
                             <p class="card-text">Summary:  <%= ele.content.slice(0, 75)+"..." %></p>
-                            <a href="blogs/<%= ele.id%>" class="card-link">View full blog</a>
+                            <a href="blogs/<%= ele.id%>" class="cardlink">View full blog</a>
+                            <form action="/delete/<%= ele.id%>" method="delete" class="delete-form">
+                                <button class="btn btn-outline-danger" type="submit">Delete</button>
+                            </form>
 
                         </div>
                     </div>
