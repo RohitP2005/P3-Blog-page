@@ -24,11 +24,29 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/add">Add Blogs</a></li>
-                        <li><a class="dropdown-item" href="/upd">Update Blogs</a></li>
+                        <li class="nav-item dropend">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Update Blogs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <% blogs.forEach(ele=> { %>
+                              <li><a class="dropdown-item" href="upd/<%= ele.id%>"><%= ele.title %></a></li>
+                              <% }); %>
+                            </ul>
+                          </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/del">Delete Blogs</a></li>
+                        <li>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Delete Blogs
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <% blogs.forEach(ele=> { %>
+                                <li><a class="dropdown-item" href="delete/<%= ele.id%>"><%= ele.title %></a></li>
+                                <% }); %>
+                              </ul>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -38,3 +56,4 @@
         </div>
     </div>
 </nav>
+

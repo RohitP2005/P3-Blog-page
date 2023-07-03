@@ -7,36 +7,28 @@
 
     <body>
         <%- include('../partials/nav'); %>
-            <!-- <div class="maindiv">
-            <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">Well done!</h4>
-                <p>Your blog has been successfully added with the respective title,author name and content</p>
-                <hr>
-                <p class="mb-0">Check your added blog at blogs page <a href="/blogs">click here</a></p>
-              </div> -->
-            <form action="/add" method="post" id="add-form">
+            <form action="/upd/<%= bl[ind].id %>" method="post" id="add-form">
                 <div class="form">
-                    <h3>Add Your Blog </h3>
+                    <h3>update your new content </h3>
                     <div class="form-inner">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Blog title</label>
                             <input type="text" name="title" class="form-control" id="form-blog-name"
-                                placeholder="Type title name here">
+                                value=" <%= bl[ind].title %>">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Author</label>
                             <input type="text" name="author" class="form-control" id="form-author"
-                                placeholder="Type author name here">
+                                value=" <%= bl[ind].author %>">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Content</label>
                             <textarea class="form-control" name="content" id="form-content" rows="7"
-                                placeholder="Type your content here"></textarea>
+                                value=" <%= bl[ind].content %>"></textarea>
                         </div>
                         <input class="btn btn-outline-secondary" type="submit" value="Submit">
                     </div>
                 </div>
             </form>
 
-            </div>
             <%- include('../partials/footer'); %>

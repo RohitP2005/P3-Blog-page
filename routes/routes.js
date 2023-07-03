@@ -16,11 +16,37 @@ router.get("/about", (req, res) => {
 router.get("/blogs", (req, res) => {
     res.render("pages/blogs", blogs);
 });
-router.get("/del", (req, res) => {
-    res.redirect("/blogs");
+router.get("/upd/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const index = blogs.findIndex(obj => obj.id === id);
+    const arr = {
+        bl:blogs,
+        ind:index
+    }
+    res.render("pages/update",arr);
 });
+router.post("/upd/:id", (req, res) => {
+    const ids = parseInt(req.params.id);
+    const index = blogs.findIndex(obj => obj.id === ids);
+    if (index !== -1) {
+        blogs.splice(index, 1);
+        console.log("Object deleted successfully!");
+    } else {
+        console.log("Object not found.");
+    }
+    const post = ({
+        title: req.body.title,
+        author: req.body.author,
+        content: req.body.content,
+        id: ids + 1 
+    });
+    blogs.splice(index, 0, post);
+    res.redirect("/blogs");
+
+})
+
 router.get("/add", (req, res) => {
-    res.render("pages/add");
+    res.render("pages/add");  /*renders the page*/
 });
 router.get("/blogs/:id", (req, res) => {
     const id = parseInt(req.params.id);
@@ -33,10 +59,10 @@ router.post("/add", (req, res) => {
         title: req.body.title,
         author: req.body.author,
         content: req.body.content,
-        id: ids + 1
+        id: ids + 1 /*adds the content*/
     });
     blogs.push(post)
-    res.redirect("/blogS");
+    res.redirect("/blogs");
 });
 router.post('/delete/:id', (req, res) => {
     const id = parseInt(req.params.id);
