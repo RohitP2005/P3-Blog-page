@@ -43,7 +43,6 @@ To set up and run this project locally, follow these steps:
     Create a `.env` file at the root of your project and add the following variables:
     ```bash
     PORT=3000
-    DB_URI=mongodb://localhost:27017/blogDB
     ```
 
 4. **Start the development server**:
